@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//Q1 find character occurences__one way
+var str = "aaabbccdfgg"
+var d = Dictionary&lt;Character,Int&gt;()
+for i in str{
+    if d[i] != nil{
+        d[i]=d[i]!+1
+    }else{
+        d[i]=1
+    }
+}
+var res = ""
+for j in d.keys{
+    res = res + String(j) + String(d[j]!)
+}
+print(res)
+
+//Q1 find character occurence__second way
+var s1 = "ghysdfsrshn"
+var s2:String = ""
+var count = 0
+for i in s1.indices{
+    if s1[i] != "."{
+        var x = s1[i]
+        count = 0
+        s2 = s2 + String(x)
+        for j in s1.indices{
+            if x==s1[j]{
+                count=count+1
+                s1.remove(at:j)
+                s1.insert(".",at:j)
+            }
+        }
+        s2 = s2 + String(count)
+    }
+}
+print(s2)
+
+
+//Q2 Anagram 
+var s1 = "silent"
+var s2 = "listen"
+
+for i in s1.indices{
+    var x = s1[i]
+    for j in s2.indices{
+        if x == s2[j]{
+            s2.remove(at:j)
+            break
+        } 
+    }
+}
+
+if s2 == ""{
+    print("Anagram")
+}else{
+    print("Not Anagram")
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 983}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
